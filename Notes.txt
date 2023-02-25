@@ -87,3 +87,7 @@ Head specifies the current branch at which we are currently working on.
 
 suppose you are on branch master in order to merge it with some other branch use
 git branch merge [branchName]
+
+watch from 7:00 
+#git Zdalne repozytorium i fork - Kurs git po polsku #9/12
+
