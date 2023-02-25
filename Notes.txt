@@ -1,3 +1,4 @@
+I.
 System kontroli wersji - system zapisujący historię zmian w kodzie np. git z którego korzysta github. Umożliwia w razie potrzeby przywrócenie odpowiednich wersji. Można dzięki niemu przeglądać historie zmian, kto je wprowadził, przywracać stare wersje i dodatkowo ułątwia prace w grupie.
 
 branching - tworzenie niezależnych od siebie kopii kodu na których można pracować niezależnie od głównego repozytorium i w razie potrzeby złączyć je (głowne repo) z gałęzią w jedną całość.
@@ -7,6 +8,7 @@ git jest rozproszonym kontrolem wersji gdyż główne repozytorium jest jedynie 
 w repozytorium można wydzielić
 working directory ()
 - przechowuje pliki naszego projektu
+
 
 
 stage area ( dodanie za pomocą komendy add. plików zmodyfikowanych)
@@ -40,4 +42,48 @@ git reset <hash> resets git repo to specific place in history, should be used di
 
 git log shows history of commits made
 --oneline (easy to read version)
+-- author ="AuthorName" (show commit of specific author)
+--grep ="Phrase" (search by specific phrase made in commit comment)
+--oneline --number (specifiy how many commit yuou wanna see )
+-- <file> see commits which made change to specific file
+--oneline --patch --<file> show changes made to file
+-- stat show stats of changing of specific file
+-- format="formattingWay" let us specifiy how we want to see the history of github, to see specific way go for github documentation 
 we can read hashed from it and move to them with checkout
+
+Czym jest branching,system kontroli wersji. Co to znaczy, że git jest rozproszonym system kontroli wersji
+
+wyjasnij flow dodawania nowych plików do git i nazwij poszczególne obszary przechowywania plików.
+
+Podaj komendem która jest odwrotnością git add.
+Jakiej komendy by przejsc w stan detached head konkretnego hasha.
+W jaki sposób można zresetować git do konkretnego commita i jakich flag ta komenda używać
+Jak usunąc plik z repozytorium
+wyjasnij co robi git clean i podaj flagi z jakich korzysta
+Plik zostaje usunięty z working directory po czym informacja o tym zostaje dodana do stagin area, okresl jak można powrócić do stanu repozytorium przed usunięciem pliku.
+
+Podaj jak dostać logi które:
+-są napisane w wersji skroconej, zawierają konkretnego atura, tekst komentarzu, jest ich określona ilość
+
+Jak cofnąć zmiany z konkretnego commita i zapisać je jako nowy commit.
+
+II.
+Dobra praktyka pisania komentarzy,
+Zaczynać z dużej litery
+Maks 72 znaków na wiersz (git sam z siebie nie łamie wierszy)
+Komentarz jak i tytuł zawierają informacje o tym co zrobione zostało w commita
+Nie dodawć kropki na koncu
+Tytuł maks 50 znaków
+
+git branch - show branch we are currently on and other branches that exist 
+git stash (-m "comment text")  - suppose we've made some changes in a wrong branch in order to bring them to the correct one we can use
+git stash list //holds information about stash changes
+git stash push -u (allows to add changes which aren't yet tracked by git)
+git stash which will store the information about changes we've made and then when switching to the correct branch we 
+git stash branch [branchName] creates a new branch with latest stash entry
+can use git stasth pop (optional:stash[index] to specifiy what from stash we want to pop) to bring those changes to the correct branch.
+
+Head specifies the current branch at which we are currently working on.
+
+suppose you are on branch master in order to merge it with some other branch use
+git branch merge [branchName]
