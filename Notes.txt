@@ -1,0 +1,43 @@
+System kontroli wersji - system zapisujący historię zmian w kodzie np. git z którego korzysta github. Umożliwia w razie potrzeby przywrócenie odpowiednich wersji. Można dzięki niemu przeglądać historie zmian, kto je wprowadził, przywracać stare wersje i dodatkowo ułątwia prace w grupie.
+
+branching - tworzenie niezależnych od siebie kopii kodu na których można pracować niezależnie od głównego repozytorium i w razie potrzeby złączyć je (głowne repo) z gałęzią w jedną całość.
+
+git jest rozproszonym kontrolem wersji gdyż główne repozytorium jest jedynie kwestią umowną i programiści pracują raczej na własnych kopiach.
+
+w repozytorium można wydzielić
+working directory ()
+- przechowuje pliki naszego projektu
+
+
+stage area ( dodanie za pomocą komendy add. plików zmodyfikowanych)
+- tymczasowe przechowuje pliki które mają trafić do głównego repozytorium
+
+.git area ((dodanie za pomocą komendy commit plików sledzonych)
+-główna przechowalnia (foldet .git)
+
+plik .gitignore zachowuje nazwy plików które muszą być ignorowane
+
+git commit without -m flag will open editor for adding message
+
+git clean deletes all files which aren't tracked
+-n gives list of files that would be deleted
+-nd gives list of files/folders that would be deleted
+-i opens interactive way (add df for folder deletion)
+
+git restore --staged <file> to revert specific file from stagin area
+git restore - <file> to revert changes made to a file
+git rm <fil> removes from repository
+git reset clears staging area (reverse of git add)
+git chechkout <file> can be used to restore a file that was earlier in git (moves head pointer to specified) 
+
+git chechkout <hash> it enables us to work in detached file state at specific place at history and create a new branch with changes we have created
+
+git revert <hash> reverses changes made from specific commit and writes them as new comit
+git reset <hash> resets git repo to specific place in history, should be used directly in public repository 
+--mixed (every newer commit will be deleted and those changed will added as untracked)
+--soft (every newer commit will be deleted and those changed will added as staged)
+--hard (every newer commit will be deleted and those changed lost )
+
+git log shows history of commits made
+--oneline (easy to read version)
+we can read hashed from it and move to them with checkout
